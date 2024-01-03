@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ввод пароля</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Введите пароль (пароль "1")</h2>
+    <form id="passwordForm" onsubmit="checkPassword(); return false;">
+        <label for="password">Пароль:</label>
+        <input type="text" id="password" required>
+        <button type="submit">Ввести</button>
+    </form>
+    <p id="errorText" style="color: red;"></p>
+</div>
+
+<script>
+    function checkPassword() {
+        var enteredPassword = document.getElementById("password").value;
+        var correctPassword = "1";
+
+        if (enteredPassword === correctPassword) {
+            window.location.href = "PART1_original.htm";
+        } else {
+            document.getElementById("errorText").innerText = "ПАРОЛЬ 1.";
+        }
+    }
+</script>
+
+</body>
+</html>
